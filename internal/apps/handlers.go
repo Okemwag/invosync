@@ -1,4 +1,4 @@
-package invosync
+package handlers
 
 import (
 	"encoding/json"
