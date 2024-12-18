@@ -1,14 +1,22 @@
 package invosync
 
-import "github.com/Okemwag/invosync/invosync/internal/pkg/model"
+import "github.com/Okemwag/invosync/internal/pkg/model"
 
-
-// Mapper is an interface that defines the methods that a struct must implement to be considered a Mapper
-
+// DBBook maps a model.Book to a model.DBBook
 func DBBook(book *model.Book) *model.DBBook {
-	return model.Book{
-		Isbn:      book.Isbn,
-		Name:      book.Name,
+	dbBook := &model.DBBook{
+		Isbn: book.Isbn,
+		Name:  book.Name,
 		Publisher: book.Publisher,
 	}
+	return dbBook
+}
+
+func Book(dbBook *model.DBBook) *model.Book {
+	book := &model.Book{
+		Isbn: dbBook.Isbn,
+		Name: dbBook.Name,
+		Publisher: dbBook.Publisher,
+	}
+	return book
 }
