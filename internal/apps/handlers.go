@@ -2,15 +2,14 @@ package handlers
 
 import (
 	"encoding/json"
-	"net/http"
-	"strconv"
 	"github.com/Okemwag/invosync/internal/pkg/model"
 	"github.com/Okemwag/invosync/internal/pkg/service"
 	"github.com/gorilla/mux"
+	"net/http"
+	"strconv"
 )
 
 const SuccessResponse = "success"
-const ErrorResponse = "error"
 
 type BookHandler struct {
 	bookService service.BookService
